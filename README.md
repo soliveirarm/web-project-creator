@@ -34,7 +34,7 @@ Pronto! Seu projeto foi criado, dentro da pasta com nome de sua escolha terão 3
 
 ## Download
 
-<a href="https://github.com/oliveirasarah/Estrutura-Basica-Projetos-HTML/releases/download/latest/CriarProjeto.zip">
+<a href="https://github.com/oliveirasarah/Estrutura-Basica-Projetos-HTML/releases/download/latest/CriarProjeto.exe">
   <img src="./assets/download-button.svg"/>
 </a>
 
