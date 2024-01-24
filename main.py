@@ -1,21 +1,35 @@
 from os import makedirs, getcwd, startfile, system
 
-
-for _ in range(29):
-    print("\n")
-
 folder_name = input("Nome da pasta do seu projeto: ")
 
+path = f"./{folder_name}"
+
 try:
-    makedirs(f"./{folder_name}")
+    makedirs(path)
     print("Pasta criada!\n")
 except FileExistsError:
     folder_exists = input("Essa pasta já existe! Deseja continuar? (s/n) ")
     if folder_exists != "s":
         exit()
 
+js_path = "script.js"
+css_path = "style.css"
 
-path = f"./{folder_name}"
+separate_js_folder = input(
+    "Você gostaria de criar uma pasta 'js' para os arquivos javascript? (s/n) "
+)
+
+separate_css_folder = input(
+    "Você gostaria de criar uma pasta 'css' para os arquivos css? (s/n) "
+)
+
+if separate_js_folder == "s":
+    makedirs(f"{path}/js")
+    js_path = "js/script.js"
+
+if separate_css_folder == "s":
+    makedirs(f"{path}/css")
+    css_path = "css/style.css"
 
 title = input("Digite o título do seu documento(<title> do seu HTML): ")
 
@@ -27,16 +41,16 @@ with open(f"{path}/index.html", "w") as f:
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="{css_path}" />
   </head>
   <body>
-    <script src="script.js"></script>
+    <script src="{js_path}"></script>
   </body>
 </html>
 """
     )
 
-with open(f"{path}/style.css", "w") as f:
+with open(f"{path}/{css_path}", "w") as f:
     f.write(
         """*,
 *::before,
@@ -49,7 +63,7 @@ with open(f"{path}/style.css", "w") as f:
     )
 
 
-open(f"{path}/script.js", "w")
+open(f"{path}/{js_path}", "w")
 
 current_directory = getcwd()
 
