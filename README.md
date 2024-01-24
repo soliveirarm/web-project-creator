@@ -31,11 +31,11 @@ Caso você opte por utilizar pastas separadas, ficará assim:
 
 ## HTML
 
-- O arquivo `index.html` vem com estrutura básica e com os links com os arquivos `style.css` e `script.js`.
+O arquivo `index.html` vem com estrutura básica e com os links com os arquivos `style.css` e `script.js`.
 
 ## CSS
 
-- O arquivo `style.css` já vem com os resets básicos:
+O arquivo `style.css` já vem com os resets básicos:
 
 ```css
 *,
