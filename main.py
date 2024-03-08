@@ -1,45 +1,40 @@
-from os import makedirs, getcwd, system, path
-import platform
+from os import makedirs, getcwd, system
 
-user_system = platform.system()
-
-folder_name = input("Nome da pasta do seu projeto: ")
+folder_name = input("Type in the name of your project's folder: ")
 
 path = f"./{folder_name}"
 
 try:
     makedirs(path)
-    print("Pasta criada!\n")
+    print("Folder created!\n")
 except FileExistsError:
-    folder_exists = input("Essa pasta já existe! Deseja continuar? (s/n) ")
-    if folder_exists != "s":
+    folder_exists = input("This folder already exists! Do you wanna continue? (y/n) ")
+    if folder_exists != "y":
         exit()
 
 js_path = "script.js"
 css_path = "style.css"
 
 separate_js_folder = input(
-    "Você gostaria de criar uma pasta 'js' para os arquivos javascript? (s/n) "
+    "Do you wanna create a 'js' folder for javascript files? (y/n) "
 )
 
-separate_css_folder = input(
-    "Você gostaria de criar uma pasta 'css' para os arquivos css? (s/n) "
-)
+separate_css_folder = input("Do you wanna create a 'css' folder for css files? (y/n) ")
 
-if separate_js_folder == "s":
+if separate_js_folder == "y":
     makedirs(f"{path}/js")
     js_path = "js/script.js"
 
-if separate_css_folder == "s":
+if separate_css_folder == "y":
     makedirs(f"{path}/css")
     css_path = "css/style.css"
 
-title = input("Digite o título do seu documento(<title> do seu HTML): ")
+title = input("Type in the title of yor document (HTML's <title> tag): ")
 
 with open(f"{path}/index.html", "w") as f:
     f.write(
         f"""<!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -71,23 +66,8 @@ open(f"{path}/{js_path}", "w")
 current_directory = getcwd()
 
 open_with_code = input(
-    "\nTudo pronto! Você gostaria de abrir a pasta no VS Code? (s/n) "
+    "\nYour project's been created! Would you like to open it with VS Code? (y/n) "
 )
 
-absolute_path = f"{current_directory}/{folder_name}"
-
-if open_with_code == "s":
+if open_with_code == "y":
     system(f"code {current_directory}/{folder_name}")
-else:
-    match user_system:
-        case "Windows":
-                system(f"start {path.realpath(absolute_path)}")
-        case "Linux":
-                system(f"xdg-open {absolute_path}")
-        case "Darwin": 
-                system(f"open {absolute_path}")
-
-
-
-
-
