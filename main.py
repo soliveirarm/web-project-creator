@@ -1,4 +1,7 @@
-from os import makedirs, getcwd, startfile, system
+from os import makedirs, getcwd, system, path
+import platform
+
+user_system = platform.system()
 
 folder_name = input("Nome da pasta do seu projeto: ")
 
@@ -71,7 +74,20 @@ open_with_code = input(
     "\nTudo pronto! Você gostaria de abrir a pasta no VS Code? (s/n) "
 )
 
+absolute_path = f"{current_directory}/{folder_name}"
+
 if open_with_code == "s":
     system(f"code {current_directory}/{folder_name}")
 else:
-    startfile(f"{current_directory}/{folder_name}")
+    match user_system:
+        case "Windows":
+                system(f"start {path.realpath(absolute_path)}")
+        case "Linux":
+                system(f"xdg-open {absolute_path}")
+        case "Darwin": 
+                system(f"open {absolute_path}")
+
+
+
+
+
