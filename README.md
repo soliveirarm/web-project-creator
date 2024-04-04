@@ -21,17 +21,17 @@ Voilà! Your project has been created, inside the project folder there'll be 3 f
 
 - `index.html`
 - `style.css`
-- `script.js`
+- `app.js`
 
 If you choose to have separate folder for CSS and JS, it'll be like this:
 
 - `index.html`
 - `css/style.css`
-- `js/script.js`
+- `js/app.js`
 
 ## HTML
 
-The `index.html` comes with a basic structure and it's already linked to `style.css` and `script.js`.
+The `index.html` comes with a basic structure and it's already linked to `style.css` and `app.js`.
 
 ## CSS
 
