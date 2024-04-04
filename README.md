@@ -49,7 +49,7 @@ The `style.css` comes with these basic resets:
 
 ## Download
 
-<a href="https://github.com/oliveirasarah/Estrutura-Basica-Projetos-HTML/releases/download/latest/web_project.py">
+<a href="https://github.com/soliveirarm/web-project-creator/releases/download/latest/script.py">
   <img src="./assets/download-button.svg"/>
 </a>
 
