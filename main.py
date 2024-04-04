@@ -12,7 +12,7 @@ except FileExistsError:
     if folder_exists != "y":
         exit()
 
-js_path = "script.js"
+js_path = "app.js"
 css_path = "style.css"
 
 separate_js_folder = input(
@@ -23,7 +23,7 @@ separate_css_folder = input("Do you wanna create a 'css' folder for css files? (
 
 if separate_js_folder == "y":
     makedirs(f"{path}/js")
-    js_path = "js/script.js"
+    js_path = "js/app.js"
 
 if separate_css_folder == "y":
     makedirs(f"{path}/css")
