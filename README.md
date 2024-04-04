@@ -9,7 +9,7 @@
 
 ## Walkthrough
 
-When you click on `web_project.py`, your terminal/windows cmd will open and you'll be able to:
+When you click on `script.py`, your terminal/windows cmd will open and you'll be able to:
 
 1. Choose the name of your project folder
 2. Choose whether or not you want a separate `/js` folder
