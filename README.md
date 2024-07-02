@@ -43,7 +43,7 @@ The `style.css` comes with these basic resets:
 *::after {
   margin: 0;
   padding: 0;
-  border-box: border-box;
+  box-sizing: border-box;
 }
 ```
 
